@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+	val splashVersion = "1.2.0-alpha01"
 
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -66,4 +67,7 @@ dependencies {
 	androidTestImplementation(libs.androidx.ui.test.junit4)
 	debugImplementation(libs.androidx.ui.tooling)
 	debugImplementation(libs.androidx.ui.test.manifest)
+
+	// Splash Screen API
+	implementation(libs.androidx.core.splashscreen)
 }
