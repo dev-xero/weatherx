@@ -1,6 +1,8 @@
 plugins {
 	alias(libs.plugins.android.application)
 	alias(libs.plugins.jetbrains.kotlin.android)
+	id("kotlin-kapt")
+	id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -50,8 +52,7 @@ android {
 }
 
 dependencies {
-	val splashVersion = "1.2.0-alpha01"
-
+	// Compose
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
 	implementation(libs.androidx.activity.compose)
@@ -70,4 +71,22 @@ dependencies {
 
 	// Splash Screen API
 	implementation(libs.androidx.core.splashscreen)
+
+	// KTOR
+	val ktorVersion = "2.3.10"
+	implementation(libs.io.ktor)
+	implementation(libs.io.ktor.client.serialization)
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+	implementation("io.ktor:ktor-client-logging-jvm:$ktorVersion")
+	implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
+	implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+
+	// Hilt
+	implementation( "com.google.dagger:hilt-android:2.44.2")
+	kapt("com.google.dagger:hilt-compiler:2.44.2")
+	implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+}
+
+kapt {
+	correctErrorTypes = true
 }
