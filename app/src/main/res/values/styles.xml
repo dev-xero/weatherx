@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Splash screen setup -->
 <resources>
     <style name="Theme.App" parent="@android:style/Theme.DeviceDefault" />
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-
+        <item name="windowSplashScreenBackground">@color/dark_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen</item>
+        <item name="postSplashScreenTheme">@style/Theme.App</item>
     </style>
 </resources>
